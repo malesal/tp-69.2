@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+string insertarCaracterEntreLetras(const string & input, char separador);
+
+int main() {
+    string cadena;
+    char caracter;
+
+    cout << "Ingrese una cadena: ";
+    cin >> cadena;
+
+    cout << "Ingrese un caracter: ";
+    cin >> caracter;
+
+    string resultado = insertarCaracterEntreLetras(cadena, caracter);
+
+    cout << "Resultado: " << resultado << endl;
+
+    return 0;
+}
+
+string insertarCaracterEntreLetras(const string & input, char separador) {
+    string resultado;
+
+    for (size_t i = 0; i < input.length(); i++) {
+        resultado += input[i];
+        
+        if (i != input.length() - 1) {
+            resultado += separador;
+        }
+    }
+    return resultado;
+}
